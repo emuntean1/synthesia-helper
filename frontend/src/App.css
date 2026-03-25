@@ -1,0 +1,112 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px 24px;
+  background: linear-gradient(180deg, #0d0d1a 0%, #1a1a2e 100%);
+  color: #eee;
+  font-family: system-ui, sans-serif;
+}
+
+h1 {
+  margin-bottom: 16px;
+  font-size: 28px;
+  font-weight: 300;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #7eb8da;
+}
+
+.info-bar {
+  color: #777;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.5px;
+}
+
+.progress-container {
+  width: 100%;
+  max-width: 1248px;
+  height: 6px;
+  background: #222;
+  border-radius: 3px;
+  margin-bottom: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: height 0.15s;
+}
+
+.progress-container:hover {
+  height: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4a9eda, #4eda8a);
+  border-radius: 2px;
+  transition: width 0.1s linear;
+}
+
+.countdown-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 13, 26, 0.85);
+  z-index: 10;
+  border-radius: 8px 8px 0 0;
+}
+
+.countdown-number {
+  font-size: 72px;
+  font-weight: 200;
+  color: #7eb8da;
+  animation: countPulse 0.6s ease-out;
+}
+
+@keyframes countPulse {
+  0% {
+    transform: scale(1.4);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.canvas-container {
+  position: relative;
+}
+
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 13, 26, 0.7);
+  z-index: 20;
+  font-size: 18px;
+  color: #7eb8da;
+  letter-spacing: 2px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-top-color: #7eb8da;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 12px;
+  vertical-align: middle;
+}
